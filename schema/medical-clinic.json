@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Klinik Medika Prima",
+  "image": "https://klinik-medika-prima.vercel.app/assets/images/og-image.jpg",
+  "url": "https://klinik-medika-prima.vercel.app/",
+  "telephone": "+62-812-3456-7890",
+  "email": "info@medikaprima.com",
+  "priceRange": "$$",
+  "description": "Klinik kesehatan keluarga dengan layanan dokter umum, pemeriksaan kesehatan, vaksinasi, dan konsultasi medis.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Contoh No.123",
+    "addressLocality": "Jakarta Selatan",
+    "addressRegion": "DKI Jakarta",
+    "postalCode": "12345",
+    "addressCountry": "ID"
+  },
+  "openingHours": ["Mo-Su 08:00-21:00"],
+  "sameAs": []
+}
