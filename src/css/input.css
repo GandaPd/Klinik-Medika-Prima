@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font */
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  /* Brand Colors */
+  --color-primary: #0f766e;
+  --color-secondary: #14b8a6;
+  --color-accent: #ccfbf1;
+  --color-background: #f8fafc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-600 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-slate-900;
+  }
+
+  main p {
+    @apply leading-7 text-slate-600;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-teal-700 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-teal-600 ring-offset-2;
+  }
+}
+
+@utility container-section {
+  @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+}
+
+@utility section-spacing {
+  @apply py-16 lg:py-24;
+}
+
+@utility section-title {
+  @apply text-3xl font-bold tracking-tight text-slate-900;
+}
+
+@utility section-description {
+  @apply mt-4 text-slate-600 leading-relaxed;
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800;
+}
+
+@utility btn-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-teal-700 px-6 py-3 font-semibold text-teal-700 bg-white transition hover:bg-teal-50;
+}
+
+@utility card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300;
+}
+
+@utility card-hover {
+  @apply hover:-translate-y-1 hover:shadow-lg;
+}
+
+@utility section-header {
+  @apply mx-auto max-w-3xl text-center;
+}
+
+@utility badge {
+  @apply inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-4 py-2 text-sm font-medium text-teal-700;
+}
+
+@utility icon-box {
+  @apply flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700;
+}
+
+@utility text-link {
+  @apply inline-flex items-center gap-2 font-semibold text-teal-700 transition hover:text-teal-800;
+}
+
+/* =========================================
+   Scroll Reveal Animation
+========================================= */
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.96);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.show,
+  .reveal-left.show,
+  .reveal-right.show,
+  .reveal-scale.show {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
